@@ -14,4 +14,14 @@ export class AppComponent {
       return 'test';
     }
   };
+  img = 'https://s3.us-east-2.amazonaws.com/upload-icon/uploads/icons/png/8575147831553750379-128.png';
+
+  //
+
+  constructor() {
+    setTimeout(() => {
+      console.log('Timeout is over');
+      this.img = 'https://angular.io/assets/images/logos/angular/angular.svg';
+    }, 5000);
+  }
 }
