@@ -1,9 +1,21 @@
 <h1>Hello angular World</h1>
 
-<button (click)="toggle = !toggle">Toggle</button>
-<button (click)="toggle=111">set 11</button>
-<div [ngSwitch]="toggle">
-  <p *ngSwitchCase="true" class="red">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure, quaerat.</p>
-  <p *ngSwitchCase="false" class="blue">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure, quaerat.</p>
-  <p *ngSwitchDefault>Lorem ipsum.</p>
-</div>
+<!--<ul>-->
+<!--  <li *ngFor="let n of arr; let idx = index">-->
+<!--    {{idx+1}} <strong>{{n}}</strong>-->
+<!--  </li>-->
+<!--</ul>-->
+
+<ul style="list-style: none">
+  <li *ngFor="let post of obj">
+    <p>{{post.title}} <b>{{post.author}}</b></p>
+    <ul>
+      <li *ngFor="let comment of post.comments">
+        <div>
+          <small>{{comment.name}}</small>
+          <p>{{comment.text}}</p>
+        </div>
+      </li>
+    </ul>
+  </li>
+</ul>
