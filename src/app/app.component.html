@@ -9,7 +9,16 @@
 <!--<p>{{40 + 2 }}</p>-->
 <!--<p>{{'Hello' + ' World'}}</p>-->
 
-<img [src]="img" width="50px" height="50px">
+<!--<img [src]="img" width="50px" height="50px">-->
+<button (click)="onClick($event)" >Click me</button>
+
+<input
+  type="text"
+  (keyup.enter)="onInput($event)"
+  (blur)="onBlur(myInput.value)"
+  #myInput
+/>
+<p><strong>{{inputValue}}</strong></p>
 <hr>
 <app-post></app-post>
 <app-post></app-post>
