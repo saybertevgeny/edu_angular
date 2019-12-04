@@ -1,8 +1,12 @@
 <div class="container">
   <h1>Angular Pipes</h1>
+  <p>{{float}}</p>
+  <p>{{float | currency}}</p>
+  <p>{{float | percent: '2.0-0'}}</p>
 
+  <pre>{{obj | json}}</pre>
+  <hr>
   <p>{{date | date:'dd.MM.yyyy'}}</p>
-
   <hr>
   <p>{{str | uppercase | lowercase | titlecase}}</p>
   <p>{{str | titlecase | slice:1:-2}}</p>
