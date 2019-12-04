@@ -1,14 +1,22 @@
-function logInfo(name: string, age: number): void {
-    console.log(`Info: ${name}, ${age}`);
-}
+class Server {
+    static VERSION = '1.0.3';
 
-logInfo('Zhenya', 25);
+    private status: string = 'Working';
 
-function calc(a: number, b: number | string): number {
-    if (typeof b == 'string') {
-        b = +b;
+    constructor(public name: string, protected ip: number) {
     }
-    return a + b;
+
+    public turnOn() {
+        this.status = 'working';
+    }
+
+    protected turnOff() {
+        this.status = 'offline';
+    }
+
+    public getStatus(): string {
+        return this.status;
+    }
 }
 
-console.log(calc(2, 5));
+const server: Server = new Server('AWS', 1234);
