@@ -1,14 +1,12 @@
-interface UserInterface {
-    name: string,
-    age: number,
-    logInfo: () => void,
-    id?: any
+interface SayHello {
+    sayHello: () => void
 }
 
-const user: UserInterface = {
-    name: 'Vladlien',
-    age: 25,
-    logInfo() {
-        console.log(this.name + ' ' + this.age);
+class User implements SayHello{
+    constructor(protected name: string, private age: number) {}
+
+    sayHello(): void{
+        console.log(this.name + ' hello!');
     }
-};
+
+}
