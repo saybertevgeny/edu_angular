@@ -1,6 +1,8 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { AppComponent } from './app.component';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
+import {AppComponent} from './app.component';
+import {FormsModule} from '@angular/forms';
+import {AppCounterService} from './services/app-counter.service';
 
 @NgModule({
   declarations: [
@@ -8,8 +10,12 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [
+    AppCounterService
+  ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
