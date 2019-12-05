@@ -52,6 +52,7 @@ export class AppComponent implements OnInit {
 
   completeTodo(id: number) {
     this.todosService.completeTodo(id).subscribe(todo=>{
+      // todo = JSON.parse(todo);// if responseType: 'text'
       this.todos.find(t => t.id = todo.id).completed = true;
     })
   }
