@@ -1,7 +1,7 @@
 import {HttpClient} from '@angular/common/http';
 import {Injectable} from '@angular/core';
 import {Observable} from 'rxjs';
-import { delay } from 'rxjs/operators';
+import {delay} from 'rxjs/operators';
 
 export interface Todo {
   completed: boolean,
@@ -24,5 +24,9 @@ export class TodosService {
 
   removeTodo(id: number):Observable<void> {
     return this.http.delete<void>(`https://jsonplaceholder.typicode.com/todos/${id}`);
+  }
+
+  completeTodo(id:number):Observable<Todo>{
+    return this.http.put<Todo>(`https://jsonplaceholder.typicode.com/todos/${id}`,{completed:true});
   }
 }

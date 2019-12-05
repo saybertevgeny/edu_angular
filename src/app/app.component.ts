@@ -1,6 +1,4 @@
 import {Component, OnInit} from '@angular/core';
-import {HttpClient} from '@angular/common/http';
-import {delay} from 'rxjs/operators';
 import {Todo, TodosService} from './todos.service';
 
 @Component({
@@ -47,6 +45,12 @@ export class AppComponent implements OnInit {
     this.todosService.removeTodo(id).subscribe(resp => {
       this.todos = this.todos.filter(todo => todo.id != id);
     });
+  }
+
+  completeTodo(id: number) {
+    this.todosService.completeTodo(id).subscribe(todo=>{
+      this.todos.find(t => t.id = todo.id).completed = true;
+    })
   }
 }
 
