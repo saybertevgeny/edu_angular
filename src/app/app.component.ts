@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import{interval} from 'rxjs'; //Относится к некоторым элементам которые позволяют создвать стримы
+import {interval, Subscription} from 'rxjs'; //Относится к некоторым элементам которые позволяют создвать стримы
 //import{} from 'rxjs/operators'; //относится к операторам
 @Component({
   selector: 'app-root',
@@ -7,11 +7,16 @@ import{interval} from 'rxjs'; //Относится к некоторым эле�
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+  sub: Subscription;
 
   constructor(){
-    const intervalStream$ = interval(1000);
-    intervalStream$.subscribe((value) => {
+    const intervalStream$ = interval(500);
+    this.sub = intervalStream$.subscribe((value) => {
       console.log(value);
     });
+  }
+
+  stop(){
+    this.sub.unsubscribe();
   }
 }
