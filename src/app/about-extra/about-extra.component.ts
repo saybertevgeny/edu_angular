@@ -6,4 +6,5 @@ import {Component} from '@angular/core'
   styleUrls: ['./about-extra.component.scss']
 })
 export class AboutExtraComponent {
+
 }
