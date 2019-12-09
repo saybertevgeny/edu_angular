@@ -17,7 +17,6 @@ import {SharedModule} from './shared/shared.module';
     BrowserModule,
     FormsModule,
     AppRoutingModule,
-    AboutPageModule,
     SharedModule
   ],
   providers: [],
